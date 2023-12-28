@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: server_eureka
+  cloud:
+    consul:
+      discovery:
+        instanceid:  ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        heartbeat:
+          enabled: false
+      host: localhost
+      port: 8500
